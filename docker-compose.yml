@@ -6,4 +6,5 @@ services:
         context: .
       volumes:
           - ./latex:/home/latex
-      command: bash -c 'make clean && make'
+      command: bash -c 'make clean && make && pandoc /home/latex/tcc.tex -o /home/latex/tcc.docx'
+
