@@ -1,9 +1,163 @@
-\chapter*[Introdução]{Introdução}
-\addcontentsline{toc}{chapter}{Introdução}
 
-Este documento apresenta considerações gerais e preliminares relacionadas 
-à redação de relatórios de Projeto de Graduação da Faculdade UnB Gama 
-(FGA). São abordados os diferentes aspectos sobre a estrutura do trabalho, 
-uso de programas de auxilio a edição, tiragem de cópias, encadernação, etc.
+\chapter[Introdução]{Introdução}
+\label{sec:Introducao}
 
-Este template é uma adaptação do ABNTeX2\footnote{\url{https://github.com/abntex/abntex2/}}.
+\section{Contextualização}
+
+Os bancos de dados relacionais exercem um papel imprescindível na sociedade
+sendo responsáveis por persistir e organizar diversas informações de diferentes
+áreas e domínios.
+
+Diante disso, uma importante ferramenta para contribuir com os estudo de bancos
+de dados é a linguagem SQL, sendo fundamental para a manipulação e
+gerenciamento de bancos de dados.
+
+Garantir que bancos de dados sejam bem projetados depende de pessoas
+capacitadas. Com o uso de dados em diversas áreas, a compreensão do SQL
+(Structured Query Language) torna-se essencial para estudantes de engenharia de
+software e áreas afins. No entanto, muitos estudantes enfrentam dificuldades no
+aprendizado dessa linguagem devido à falta de conhecimento do inglês e por
+consequência às estruturas básicas do SQL.
+
+Para isso é necessário que o estudante tenha conhecimentos prévios sobre inglês
+e consiga entender as palavras chaves utilizadas na linguagem SQL, assim
+permitindo que considere usa-las em problemas. Conforme identificado, os
+participantes traduziam as palavras-chave para sua língua nativa na tentativa
+de resolver um problema, o que frequentemente resultava em erros na questão
+\cite{Miedema2021}.
+
+Portanto observar a linguagem nativa torna-se um fator importante na construção
+do aprendizado do aluno, propiciando que alcancem melhores resultados
+acadêmicos através de ferramentas em sua língua nativa \cite{Silva2020}.
+
+Sendo assim, compreendendo as barreiras enfrentadas por estudantes brasileiros
+na aprendizagem do SQL, é interessante fornecer uma ferramenta para computador
+com o intuito de fornecer uma estrutura básica em português, que facilite a
+entrada do estudante brasileiros no aprendizado de SQL, sem que seja imposta
+barreiras linguísticas a essa pessoa, e condicionando o aprendizado adequado.
+
+\section{Questão da Pesquisa}
+
+Para a elaboração do trabalho mostra-se relevante compreender como auxiliar
+estudantes a aprenderem SQL, diante disso a seguinte questão de pesquisa foi
+proposta:
+
+Como o desenvolvimento de um software educativo pode auxiliar estudantes no
+aprendizado das estruturas básicas do SQL?
+
+\section{Justificativa}
+A proposta deste trabalho justifica-se pela necessidade de ferramentas que
+tornem o aprendizado do SQL mais acessível e interativo. O software
+desenvolvido visa preencher uma lacuna existente na educação em SQL,
+especialmente para falantes da língua portuguesa, proporcionando um ambiente
+amigável e intuitivo para iniciantes.
+
+Em contraponto aos modelos de text-to-SQL, que promovem o uso de texto em
+linguagem natural para a realização de consultas SQL por meio de modelos
+treinados, que traduzem o texto para SQL e gream consultas \cite{Jose2023},
+propõe-se a criação de um ambiente para desenvolvimento mais acessível, voltado
+para indivíduos com dificuldades no domínio do inglês, com o objetivo de
+facilitar o aprendizado das estruturas básicas do SQL.
+
+% podemos Falar sobre a importancia do uso de computadores no aprendizado de programacao
+
+% Falar sobre acessibilidade
+
+\section{Objetivos}
+
+\subsection{Objetivo Geral}
+
+O Objetivo principal do trabalho é desenvolver um software educativo em
+português para o sistema operacional Linux e Windows, fornecendo um ambiente
+simples e intuitivo, além do acesso as estruturas básicas do SQL.
+
+\subsection{Objetivos específicos}
+\begin{itemize}
+   \item Desenvolver um software que permita a conversão de comandos em português para
+         SQL.
+   \item Facilitar o aprendizado das estruturas básicas do SQL, incluindo DDL, DML e
+         DQL.
+   \item Avaliar a eficácia do software na melhoria da compreensão dos alunos sobre SQL.
+\end{itemize}
+
+\section{Metodologia}
+
+As metodologias utilizadas para a realização deste trabalho, foram divididas em
+duas categorias: Metodologia de Pesquisa e Metodologia de Desenvolvimento de
+Software.
+
+\subsection{Metodologia de pesquisa}
+
+Sobre a Metodologia de pesquisa, será aplicado a classificação proposta por
+pelo autor \cite{Gerhardt2009}, que descreve diferentes tipos de pesquisa em
+relação a abordagem, natureza e procedimentos, enquanto ao conceito de produção
+tecnológica segue o definido por \cite{Serzedello_Tomael_2011} como um
+procedimento de pesquisa.
+
+\begin{table}[ht]
+   \centering
+   \caption{Metodologia de pesquisa}
+   \begin{tabular}{|c|c|c|c|}
+      \hline
+      \textbf{Abordagem} & \textbf{Natureza} & \textbf{Objetivos} & \textbf{Procedimentos} \\ \hline
+      Qualitativa        & Aplicada          & Exploratória       & Pesquisa bibliográfica \\
+                         &                   &                    & Produção tecnológica   \\ \hline
+   \end{tabular}
+
+   \begin{itemize}
+      \item Fonte: Autoria própria.
+   \end{itemize}
+
+\end{table}
+
+Aspectos que envolvem à metodologia de pesquisa em questão serão melhor
+abordados na seção ~\ref{sec:metodologia_de_pesquisa}.
+
+\subsection{Metodologia de desenvolvimento de software}
+
+A metodologia de desenvolvimento que será utilizada neste trabalho segue
+valores principios e práticas do \emph{Extreme
+   Programming}\cite{10.5555/1076267} sendo estes:
+
+Valores:
+
+\begin{itemize}
+   \item Simplicity
+   \item Coragem
+\end{itemize}
+
+Principios:
+
+\begin{itemize}
+   \item Qualidade
+   \item baby Steps
+\end{itemize}
+
+Práticas:
+
+\begin{itemize}
+   \item Weekly cicle
+   \item Incremental Design
+\end{itemize}
+
+Aspectos que envolvem à metodologia de desenvolvimento de software em questão
+serão melhor abordados na seção
+~\ref{sec:metodologia_de_desenvolvimento_de_software}.
+
+\section{Organização do trabalho}
+
+Para a organização do trabalho forma feitas as seguintes divisões:
+
+\begin{itemize}
+   \item Capítulo ~\ref{sec:Introducao} - Introdução: Refere-se ao capitulo que descreve
+         o projeto proposto, bem como a questão de pesquisa, justificativa, objetivo
+         geral e específicos e uma breve introdução da metodologia.
+   \item Capítulo ~\ref{sec:referencial} - Referencial Teórico: indica o capítulo de
+         discursão, que indica o entendimento do tema bem como nuances que contribuem
+         para o trabalho.
+   \item Capítulo ~\ref{sec:metodologia} - Metodologia : compreende aspectos voltados as
+         metodologias do trabalho, contando essencialmente por metodologia de pesquisa e
+         metodologia de desenvolvimento de software.
+   \item Capítulo ~\ref{sec:conclusao} - Conclusão : Encerra a primeira fase do
+         trabalho, bem como resume o plano de execução para o trabalho proposto.
+\end{itemize}
