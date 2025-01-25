@@ -31,17 +31,6 @@ A pesquisa bibliográfica é um procedimento essencial na investigação cientí
 
 A produção tecnológica é entendida como um conjunto de processos e produtos que visam solucionar problemas práticos e atender às necessidades da sociedade, contribuindo para o desenvolvimento tecnológico, econômico e social \cite{Serzedello_Tomael_2011}.
 
-\subsection{Fluxo de Atividades}
-\label{sec:fluxo_de_atividades}
-
-\begin{figure}[h!]
-    \centering
-    \includegraphics[width=0.5\textwidth]{figuras/plano_de_trabalho.eps}
-    \caption{Fluxo de atividades}
-    Fonte: Própria
-    \label{fig:fluxo_atividade}
-\end{figure}
-
 \subsection{Cronograma}
 \label{sec:cronograma}
 
@@ -76,13 +65,29 @@ Posteriormente, o cronograma direciona-se para a execução prática do trabalho
 
 Extreme Programming (XP) é uma metodologia ágil que visa melhorar a qualidade do software e a capacidade de resposta às mudanças dos requisitos dos clientes. XP é caracterizado por um conjunto de valores, princípios e práticas que promovem a comunicação eficaz, a simplicidade no design e a adaptação constante ao feedback \cite{beckKent2004}.
 
-A metodologia de Extreme Programming é centrada em quatro valores fundamentais, dos quais destacam-se a simplicidade e a coragem. A simplicidade, como valor, busca minimizar a complexidade do desenvolvimento, incentivando a criação do sistema mais simples possível que atenda aos requisitos atuais. Ressalta-se que um design simples não apenas facilita a manutenção e a extensão do sistema, mas também reduz os custos e o tempo de desenvolvimento \cite{beckKent2004}. A coragem, por sua vez, é necessária para enfrentar mudanças e dificuldades, incentivando os desenvolvedores a refatorar o código e a eliminar recursos desnecessários sem medo de comprometer o projeto em andamento.
+\subsubsubsection{Valores}
 
-Além dos valores, XP é guiado por princípios, dos quais a qualidade e os "baby steps" são centrais para sua filosofia. O princípio da qualidade, \cite{beckKent2004} enfatiza a importância de entregar um software que atenda aos requisitos de funcionalidade e confiabilidade. A abordagem de "baby steps", ou passos pequenos, sustenta que a implementação de mudanças deve ser feita de forma incremental e iterativa, permitindo um constante ajuste e refinamento do sistema sem a introdução de grandes riscos ou rupturas.
+A metodologia de Extreme Programming é centrada em quatro valores fundamentais, dos quais destacam-se nesse projeto a simplicidade e a coragem \cite{beckKent2004}. 
 
-As práticas de XP são estruturadas para suportar seus valores e princípios, e incluem o "Weekly Cycle" e o "Incremental Design". O "Weekly Cycle" consiste em ciclos de desenvolvimento semanais, nos quais o progresso é revisado e novos planos são estabelecidos. Esta prática promove a adaptação rápida às mudanças de requisitos e ao feedback do cliente. Já o "Incremental Design" é uma abordagem que defende a evolução contínua do design do sistema, permitindo que ele cresça e se adapte conforme novas funcionalidades são integradas \cite{beckKent2004}.
+A simplicidade, como valor, busca minimizar a complexidade do desenvolvimento, incentivando a criação do sistema mais simples possível que atenda aos requisitos atuais. Ressalta-se que um design simples não apenas facilita a manutenção e a extensão do sistema, mas também reduz os custos e o tempo de desenvolvimento \cite{beckKent2004}.
 
-Portanto, Extreme Programming é uma metodologia que combina valores, princípios e práticas para criar um ambiente de desenvolvimento flexível e eficiente. A simplicidade e a coragem são valores centrais que guiam os desenvolvedores na criação de soluções eficazes e adaptáveis. O foco na qualidade e nos "baby steps" assegura que o software entregue atenda às expectativas e possam evoluir conforme necessário. Práticas como o "Weekly Cycle" e "Incremental Design" facilitam a gestão de mudanças e a evolução contínua do projeto, assegurando que o produto final seja robusto e alinhado às necessidades do cliente.
+A coragem, por sua vez, é necessária para enfrentar mudanças e dificuldades, incentivando os desenvolvedores a refatorar o código e a eliminar recursos desnecessários sem medo de comprometer o projeto em andamento \cite{beckKent2004}.
+
+\subsubsubsection{Princípios}
+
+Além dos valores, XP é guiado por princípios, dos quais a qualidade e os \textit{baby steps} são centrais para esse projeto. 
+
+O princípio da qualidade, \cite{beckKent2004} enfatiza a importância de entregar um software que atenda aos requisitos de funcionalidade e confiabilidade. 
+
+A abordagem de \textit{baby steps}, ou passos pequenos, sustenta que a implementação de mudanças deve ser feita de forma incremental e iterativa, permitindo um constante ajuste e refinamento do sistema sem a introdução de grandes riscos ou rupturas \cite{beckKent2004}.
+
+\subsubsubsection{Práticas}
+
+As práticas de XP são estruturadas para suportar seus valores e princípios, e incluem o \textit{Weekly Cycle} e o \textit{Incremental Design}. 
+
+O \textit{Weekly Cycle} consiste em ciclos de desenvolvimento semanais, nos quais o progresso é revisado e novos planos são estabelecidos. Esta prática promove a adaptação rápida às mudanças de requisitos. Já o \textit{Incremental Design} é uma abordagem que defende a evolução contínua do design do sistema, permitindo que ele cresça e se adapte conforme novas funcionalidades são integradas \cite{beckKent2004}.
+
+Durante as reuniões semanais, é necessário revisar não apenas o progresso realizado, mas também identificar e planejar as próximas histórias a serem implementadas, garantindo que o foco esteja sempre na entrega incremental de valor.
 
 \section{Requisitos}
 
@@ -154,7 +159,12 @@ A camada de tradução constitui o núcleo semântico do sistema. Ela foi constr
     \item 	extbf{Logs de Tradução}: Histórico de comandos processados, permitindo otimização futura com base em padrões de uso.
 \end{itemize}
 
-%% Sugestão de imagem: Um diagrama conceitual ilustrando o fluxo de tradução na camada de tradução, desde o comando em português até o comando SQL padrão. Prompt: 'A conceptual diagram illustrating the translation layer in a database system, mapping SQL commands from Portuguese to ANSI SQL syntax.'
+\begin{figure}
+    \centering
+    \includegraphics[width=0.3\textwidth]{figuras/traducao.eps}
+    \caption{Camada de Integração}
+    \label{fig:Camada de tradução}
+\end{figure}
 
 A camada também implementa validação semântica para evitar a execução de comandos malformados ou potencialmente inseguros.
 
@@ -180,7 +190,12 @@ A camada de integração é implementada como um middleware que gerencia a comun
     \item Implementar mecanismos de autenticação e autorização para garantir a segurança do sistema.
 \end{itemize}
 
-%% Sugestão de imagem: Um diagrama arquitetural destacando o papel do middleware na integração entre o front-end e o banco de dados. Prompt: 'An architectural diagram showing the middleware layer connecting the Flutter frontend and MySQL database.'
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{figuras/mid.eps}
+    \caption{Camada de Integração}
+    \label{fig:Camada de Integração}
+\end{figure}
 
 Além disso, esta camada utiliza técnicas de paralelismo e cacheamento para otimizar o desempenho em cenários de alta concorrência.
 

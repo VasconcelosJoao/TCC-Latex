@@ -5,7 +5,7 @@
 
 Os bancos de dados relacionais constituem um paradigma amplamente adotado no gerenciamento de dados, fundamentado na utilização de tabelas para representar tanto os dados em si quanto as relações entre eles. O modelo relacional é o mais prevalente entre os modelos de dados, sustentando a maioria dos sistemas de gerenciamento de banco de dados atuais, devido à sua eficiência e flexibilidade na representação de dados \cite{silberschatz2011database}.
 
-As tabelas em um banco de dados relacional são compostas por linhas e colunas, onde cada linha representa um registro e cada coluna corresponde a um campo de dado específico. A inter-relação entre as tabelas é realizada por meio de \textit{chaves primárias} e \textit{chaves estrangeiras}, permitindo a integração e o acesso eficiente aos dados armazenados \cite{silberschatz2011database}.
+As tabelas em um banco de dados relacional são compostas por linhas e colunas, onde cada linha representa um registro e cada coluna corresponde a um campo de dado específico. A inter-relação entre as tabelas é realizada por meio de chaves primárias e chaves estrangeiras, permitindo a integração e o acesso eficiente aos dados armazenados \cite{silberschatz2011database}.
 
 Na Figura \ref{fig:exemplo}, pode-se observar um exemplo de tabela que representa um banco de dados com informações de funcionários. A tabela apresenta dados organizados em colunas que indicam o identificador único (\textit{id}) de cada funcionário, o nome, o departamento ao qual pertencem e seus respectivos salários. Esse exemplo ilustra uma estrutura típica utilizada bancos de dados relacionais.
 
@@ -19,19 +19,18 @@ Na Figura \ref{fig:exemplo}, pode-se observar um exemplo de tabela que represent
 
 \subsection{SQL}
 
-A Linguagem de Consulta Estruturada (\textit{SQL}), desenvolvida inicialmente pela \textit{IBM} nos anos 1970 sob o nome \textit{Sequel}, consolidou-se como o padrão para a manipulação de bancos de dados relacionais. \textit{SQL} se destaca por sua natureza não procedural, permitindo que consultas sejam realizadas sobre uma ou várias tabelas. Além de sua função primária de consulta, \textit{SQL} é capaz de definir a estrutura dos dados, modificar informações armazenadas e estabelecer restrições de segurança. A linguagem é amplamente suportada por diversos produtos, solidificando sua posição como o idioma universal dos bancos de dados relacionais \cite{silberschatz2011database}.
+A Linguagem de Consulta Estruturada (SQL), desenvolvida inicialmente pela IBM nos anos 1970 sob o nome Sequel, consolidou-se como o padrão para a manipulação de bancos de dados relacionais. SQL se destaca por sua natureza não procedural, permitindo que consultas sejam realizadas sobre uma ou várias tabelas. Além de sua função primária de consulta, SQL é capaz de definir a estrutura dos dados, modificar informações armazenadas e estabelecer restrições de segurança. A linguagem é amplamente suportada por diversos produtos, solidificando sua posição como o idioma universal dos bancos de dados relacionais \cite{silberschatz2011database}.
 
-A linguagem \textit{SQL} mantém-se como uma das tecnologias mais significativas no campo do desenvolvimento. \textit{SQL} é utilizada por 51\% de todos os respondentes, destacando-se como uma das quatro principais tecnologias, ao lado de \textit{JavaScript}, \textit{HTML/CSS} e \textit{Python}. Essa ampla adoção indica a relevância de \textit{SQL} na manipulação e gestão de dados, essencial para aplicações que requerem o armazenamento e a recuperação eficiente de informações em bases de dados relacionais \cite{StackOverflow2024}.
+A linguagem SQL mantém-se como uma das tecnologias mais significativas no campo do desenvolvimento. SQL é utilizada por 51\% de todos os respondentes, destacando-se como uma das quatro principais tecnologias, ao lado de JavaScript, HTML/CSS e Python. Essa ampla adoção indica a relevância de SQL na manipulação e gestão de dados, essencial para aplicações que requerem o armazenamento e a recuperação eficiente de informações em bases de dados relacionais \cite{StackOverflow2024}.
 
-Além disso, a importância de \textit{SQL} é ainda mais pronunciada entre desenvolvedores profissionais, conforme a mesma pesquisa, onde a sua utilização atinge 54.1\%, posicionando-a logo após \textit{JavaScript}. Este dado ressalta a aplicação crítica de \textit{SQL} em ambientes corporativos, onde a eficiência, a integridade e a segurança no gerenciamento de dados são prioritárias. A \textit{expertise} em \textit{SQL} possibilita aos desenvolvedores a realização de consultas complexas, a otimização de desempenho e a garantia de integridade dos dados, habilidades indispensáveis na análise de grandes volumes de informações e essenciais para suportar as demandas de negócios modernos. Portanto, a proficiência em \textit{SQL} continua a ser uma competência essencial no arsenal de habilidades de qualquer profissional de tecnologia da informação \cite{StackOverflow2024}.
+Além disso, a importância de SQL é ainda mais pronunciada entre desenvolvedores profissionais, conforme a mesma pesquisa, onde a sua utilização atinge 54.1\%, posicionando-a logo após JavaScript. Este dado ressalta a aplicação crítica de SQL em ambientes corporativos, onde a eficiência, a integridade e a segurança no gerenciamento de dados são prioritárias. A \textit{expertise} em SQL possibilita aos desenvolvedores a realização de consultas complexas, a otimização de desempenho e a garantia de integridade dos dados, habilidades indispensáveis na análise de grandes volumes de informações e essenciais para suportar as demandas de negócios modernos. Portanto, a proficiência em SQL continua a ser uma competência essencial no arsenal de habilidades de qualquer profissional de tecnologia da informação \cite{StackOverflow2024}.
 
 
+\subsubsection{Linguagem de Definição de Dados (DDL)}
 
-\subsubsection{DDL}
+A Linguagem de Definição de Dados (DDL) em SQL é uma ferramenta na especificação do esquema de um banco de dados relacional, permitindo a definição de diversas características essenciais para cada relação. Por meio da DDL, é possível delinear a estrutura do banco de dados, especificando o esquema de cada relação, os tipos de dados associados a cada atributo e impondo restrições de integridade para assegurar a consistência dos dados, como a definição de chaves primárias. A execução de comandos DDL gera metadados, que são armazenados no dicionário de dados do sistema, um repositório acessado apenas pelo sistema de banco de dados. Este dicionário é consultado durante operações de leitura ou modificação de dados, garantindo que as atualizações atendam às restrições estabelecidas, preservando a integridade e a eficiência do sistema.\cite{silberschatz2011database}
 
-A Linguagem de Definição de Dados (\textit{DDL}) em \textit{SQL} é uma ferramenta na especificação do esquema de um banco de dados relacional, permitindo a definição de diversas características essenciais para cada relação. Por meio da \textit{DDL}, é possível delinear a estrutura do banco de dados, especificando o esquema de cada relação, os tipos de dados associados a cada atributo e impondo restrições de integridade para assegurar a consistência dos dados, como a definição de chaves primárias. A execução de comandos \textit{DDL} gera metadados, que são armazenados no dicionário de dados do sistema, um repositório acessado apenas pelo sistema de banco de dados. Este dicionário é consultado durante operações de leitura ou modificação de dados, garantindo que as atualizações atendam às restrições estabelecidas, preservando a integridade e a eficiência do sistema.\cite{silberschatz2011database}
-
-A Linguagem de Definição de Dados (\textit{DDL}) abrange comandos que possibilitam a criação, alteração e exclusão de esquemas de banco de dados, tabelas, índices e outros objetos. Exemplos de comandos \textit{DDL} incluem \textit{CREATE}, \textit{ALTER}, \textit{DROP}, \textit{TRUNCATE} e \textit{RENAME}. Esses comandos serão melhor exemplificados a seguir:
+A Linguagem de Definição de Dados (DDL) abrange comandos que possibilitam a criação, alteração e exclusão de esquemas de banco de dados, tabelas, índices e outros objetos. Exemplos de comandos DDL incluem \textit{CREATE}, \textit{ALTER}, \textit{DROP}, \textit{TRUNCATE} e \textit{RENAME}. Esses comandos serão melhor exemplificados a seguir:
 
 \subsubsubsection{CREATE}
 
@@ -40,12 +39,12 @@ O comando \textit{CREATE}, na linguagem SQL (\textit{Structured Query Language})
 \begin{figure}[h!]
     \centering
     \begin{lstlisting}
-        CREATE TABLE nome_da_tabela (
-            coluna1 tipo_de_dado,
-            coluna2 tipo_de_dado,
-            ...
-            colunaN tipo_de_dado
-        );
+    CREATE TABLE nome_da_tabela (
+    coluna1 tipo_de_dado,
+    coluna2 tipo_de_dado,
+    ...
+    colunaN tipo_de_dado
+    );
         \end{lstlisting}
     \caption{Comando SQL de criação}
     Fonte: Autor
@@ -72,8 +71,8 @@ O comando \textit{ALTER TABLE} é um recurso utilizado na manipulação de esque
 \begin{figure}[h!]
     \centering
     \begin{lstlisting}
-        ALTER TABLE nome_da_tabela
-        ADD coluna_nova tipo_de_dado;
+    ALTER TABLE nome_da_tabela
+    ADD coluna_nova tipo_de_dado;
     \end{lstlisting}
     \caption{Comando SQL - criação nova coluna usando \textit{ALTER}}
     Fonte: Autor
@@ -132,7 +131,7 @@ O comando \textit{RENAME TABLE} é uma instrução no gerenciamento de bancos de
     \label{lst:sql_rename}
 \end{figure}
 
-\subsubsection{DML}
+\subsubsection{Linguagem de Manipulação de Dados (DML)}
 
 A DML é utilizada para realizar operações de inserção, atualização e exclusão de dados armazenados nas tabelas. A DML é fundamental para a manutenção e modificação dos dados de maneira dinâmica. Os comandos \textit{INSERT}, \textit{UPDATE} e \textit{DELETE} são exemplos típicos de operações DML \cite{silberschatz2011database}.
 
@@ -178,7 +177,7 @@ O comando \textit{UPDATE}, presente na linguagem SQL, é uma ferramenta essencia
 
 \subsubsubsection{DELETE}
 
-No contexto do modelo relacional de dados, o comando \textit{DELETE} do SQL desempenha um papel crucial na manipulação de dados ao permitir a remoção de tuplas de uma tabela específica. Este comando é parte integrante da linguagem de manipulação de dados (DML) e opera exclusivamente em uma única relação por vez. A sintaxe do \textit{DELETE} é similar a uma consulta, onde é possível especificar uma condi\c{c}~ao na cláusula \textit{WHERE} para determinar quais tuplas devem ser eliminadas. Na ausência dessa cláusula, todas as tuplas da tabela são removidas, embora a estrutura da tabela permaneça intacta para futuras inserções. Além disso, a flexibilidade do \textit{DELETE} permite a incorporação de subconsultas complexas na cláusula \textit{WHERE}, possibilitando a referência a múltiplas relações e a execução de operações condicionais sofisticadas para a seleção criteriosa das tuplas a serem excluídas. A execução cuidadosa do comando \textit{DELETE} é essencial para evitar inconsistências, especialmente quando operações dependem de cálculos como médias, que podem ser afetadas pela ordem das deleções\cite{silberschatz2011database}.
+No contexto do modelo relacional de dados, o comando \textit{DELETE} do SQL desempenha um papel crucial na manipulação de dados ao permitir a remoção de tuplas de uma tabela específica. Este comando é parte integrante da linguagem de manipulação de dados (DML) e opera exclusivamente em uma única relação por vez. A sintaxe do \textit{DELETE} é similar a uma consulta, onde é possível especificar uma condição na cláusula \textit{WHERE} para determinar quais tuplas devem ser eliminadas. Na ausência dessa cláusula, todas as tuplas da tabela são removidas, embora a estrutura da tabela permaneça intacta para futuras inserções. Além disso, a flexibilidade do \textit{DELETE} permite a incorporação de subconsultas complexas na cláusula \textit{WHERE}, possibilitando a referência a múltiplas relações e a execução de operações condicionais sofisticadas para a seleção criteriosa das tuplas a serem excluídas. A execução cuidadosa do comando \textit{DELETE} é essencial para evitar inconsistências, especialmente quando operações dependem de cálculos como médias, que podem ser afetadas pela ordem das deleções\cite{silberschatz2011database}.
 
 \begin{figure}[h!]
     \centering
