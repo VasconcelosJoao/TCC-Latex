@@ -90,8 +90,40 @@ O \textit{Weekly Cycle} consiste em ciclos de desenvolvimento semanais, nos quai
 Durante as reuniões semanais, é necessário revisar não apenas o progresso realizado, mas também identificar e planejar as próximas histórias a serem implementadas, garantindo que o foco esteja sempre na entrega incremental de valor.
 
 \section{Requisitos}
+\label{sec:requisitos}
 
-\section{Arquitetura}
+Os requisitos de software são fundamentais no desenvolvimento de sistemas, pois especificam o que o sistema deve realizar, os serviços que deve fornecer e as restrições sob as quais deve operar. Eles asseguram que o sistema atenda às expectativas dos stakeholders e cumpra seus objetivos, seja para controle de dispositivos, processamento de informações ou suporte à tomada de decisões \cite{sommerville2011}. A definição de requisitos pode variar desde descrições de alto nível, voltadas a gestores, até especificações detalhadas para desenvolvedores, o que permite atender às necessidades de diferentes públicos.
+
+A elicitação de requisitos, etapa crítica na engenharia de software, envolve identificar e compreender as demandas e expectativas dos stakeholders \cite{sommerville2011}. Técnicas como entrevistas, workshops e prototipação auxiliam nesse processo, promovendo um entendimento profundo do problema e reduzindo ambiguidades. Uma elicitação ineficaz pode resultar em requisitos mal definidos, levando a desalinhamento com as necessidades reais, retrabalho e aumento de custos.
+
+Requisitos funcionais descrevem as funcionalidades específicas que o sistema deve oferecer, detalhando as operações, entradas, saídas e exceções que o sistema deve lidar \cite{sommerville2011}. A precisão desses requisitos é crucial para evitar interpretações divergentes e implementações insatisfatórias. No entanto, em sistemas complexos, desafios como diversidade de stakeholders e interesses conflitantes podem dificultar a obtenção de especificações completas e consistentes.
+
+\subsection{Requisitos Funcionais}
+
+\begin{enumerate}[label=\textbf{RF\arabic*:}, leftmargin=*, align=left]
+    \item O sistema deve permitir que o usuário insira comandos SQL em um editor de texto integrado.
+    \item O sistema deve traduzir automaticamente comandos SQL em português para a sintaxe SQL padrão do MySQL, oferecendo sugestões para correções em caso de erros de tradução.
+    \item O sistema deve permitir conexão simultânea a múltiplos servidores de banco de dados MySQL, com suporte a gerenciamento e alternância entre conexões ativas.
+    \item O sistema deve exibir uma lista detalhada de tabelas existentes no banco de dados conectado, incluindo metadados como número de registros e tamanho das tabelas.
+    \item O sistema deve permitir a execução de comandos DDL (Data Definition Language) para criação, alteração e exclusão de tabelas, com validação prévia de sintaxe.
+    \item O sistema deve permitir a execução de comandos DML (Data Manipulation Language) para inserção, atualização e exclusão de dados nas tabelas, exibindo mensagens detalhadas sobre o status das operações.
+    \item O sistema deve oferecer uma interface gráfica de usuário intuitiva e responsiva, semelhante a uma IDE, com suporte a personalização de tema (claro/escuro).
+    \item O sistema deve permitir a visualização dos dados contidos em tabelas, incluindo opções para filtragem, ordenação e exportação para formatos como CSV e Excel.
+    \item O sistema deve fornecer feedback detalhado ao usuário sobre o sucesso ou falha na execução de comandos SQL, incluindo logs de execução e possíveis causas de falha.
+    \item O sistema deve permitir a criação, configuração e gerenciamento de múltiplas conexões a diferentes bancos de dados, com armazenamento seguro das credenciais.
+    \item O sistema deve incluir uma aba de "Ajuda" contendo instruções para uso do software, exemplos de comandos SQL e resolução de problemas comuns.
+\end{enumerate}
+
+\subsection{Requisitos Não-Funcionais}
+
+\begin{enumerate}[label=\textbf{RNF\arabic*:}, leftmargin=*, align=left]
+    \item O sistema deve apresentar tempo de resposta inferior a 2 segundos para tradução e execução de comandos SQL.
+    \item O sistema deve ser compatível com a plataforma Windows.
+    \item O sistema deve implementar medidas de segurança, como prevenção contra injeções SQL e autenticação por meio de tokens seguros.
+    \item O sistema deve ser escalável horizontalmente, permitindo distribuição de carga em múltiplos servidores para alta disponibilidade.
+    \item O sistema deve armazenar logs de atividades por até 90 dias, com capacidade de exportação para análise externa.
+\end{enumerate}
+
 
 \section{Suporte Tecnológico}
 
@@ -101,7 +133,7 @@ O Git é um sistema de controle de versão distribuído, amplamente utilizado no
 
 A figura \ref{fig:git2025} ilustra um modelo de desenvolvimento distribuído, onde vários \textit{developers} colaboram por meio de um repositório compartilhado, denominado \textit{shared repository}. Cada \textit{developer} tem a capacidade de contribuir, realizar alterações e sincronizar com o repositório, permitindo uma colaboração eficiente e um fluxo de trabalho integrado \cite{git2025}.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{figuras/git_distribiuted_work.eps}
     \caption{Desenvolvimento distribuído Git}
@@ -146,7 +178,12 @@ Este sistema foi projetado para atender à demanda de tradução de comandos SQL
 \subsection{Interface do Usuário}
 A interface de usuário foi implementada no framework Flutter, explorando seu sistema declarativo para construir interfaces reativas e de alto desempenho. Ela simula funcionalidades de ferramentas de mercado, como o MySQL Workbench, mas com suporte à inserção de comandos em português. Este front-end é responsável por capturar a entrada do usuário, exibir os resultados traduzidos e lidar com mensagens de erro, utilizando componentes de UI otimizados para acessibilidade e responsividade.
 
-%% Sugestão de imagem: Um mockup da interface de usuário desenvolvida no Flutter, mostrando campos de entrada para comandos em português e uma área para exibição de resultados. Prompt: 'A user interface mockup for a Flutter-based database application, showing input fields for SQL commands in Portuguese and results display.'
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{figuras/UNBSQL.eps}
+    \caption{Software}
+    \label{fig:software_figma}
+\end{figure}
 
 Além disso, a arquitetura da interface emprega um padrão MVVM (Model-View-ViewModel), desacoplando a lógica de apresentação da lógica de negócio e permitindo que alterações na interface ou nos fluxos de dados sejam realizadas de maneira independente.
 
@@ -159,11 +196,11 @@ A camada de tradução constitui o núcleo semântico do sistema. Ela foi constr
     \item 	extbf{Logs de Tradução}: Histórico de comandos processados, permitindo otimização futura com base em padrões de uso.
 \end{itemize}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.3\textwidth]{figuras/traducao.eps}
+    \includegraphics[width=0.3\textwidth]{figuras/FluxoConceitualTraducao.eps}
     \caption{Camada de Integração}
-    \label{fig:Camada de tradução}
+    \label{fig:Camada de traducao}
 \end{figure}
 
 A camada também implementa validação semântica para evitar a execução de comandos malformados ou potencialmente inseguros.
@@ -177,7 +214,19 @@ O repositório de dados do sistema utiliza uma arquitetura de banco de dados rel
     \item 	extbf{Tabela de Logs}: Registra operações realizadas pelo sistema, incluindo traduções e execuções, permitindo análise posterior e auditoria.
 \end{itemize}
 
-%% Sugestão de imagem: Um diagrama ER (Entidade-Relacionamento) representando as tabelas do banco de dados com seus atributos e relacionamentos. Prompt: 'An entity-relationship diagram for a MySQL database, featuring tables for commands, responses, and logs with their relationships.'
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figuras/Conceitual_1.eps}
+    \caption{Diagrama Entidade Relacionamento}
+    \label{fig:Diagrama Entidade Relacionamento}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figuras/Logico_1.eps}
+    \caption{Diagrama Lógico de Dados}
+    \label{fig:Diagrama Logico de Dados}
+\end{figure}
 
 Este design normalizado garante alta eficiência em consultas frequentes e flexibilidade para expansão futura, como suporte a novos idiomas ou bancos de dados alternativos.
 
@@ -190,11 +239,11 @@ A camada de integração é implementada como um middleware que gerencia a comun
     \item Implementar mecanismos de autenticação e autorização para garantir a segurança do sistema.
 \end{itemize}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{figuras/mid.eps}
-    \caption{Camada de Integração}
-    \label{fig:Camada de Integração}
+    \includegraphics[width=0.7\textwidth]{figuras/ArquiteturadeMiddlewareparaAplicacaodeTraducao.eps}
+    \caption{Arquitetura de Middleware para Aplicacao de Tradução}
+    \label{fig:ArquiteturadeMiddlewareparaAplicacaodeTraducao}
 \end{figure}
 
 Além disso, esta camada utiliza técnicas de paralelismo e cacheamento para otimizar o desempenho em cenários de alta concorrência.
@@ -211,7 +260,12 @@ O pipeline de processamento de dados do sistema segue uma sequência bem definid
     \item A interface exibe o resultado final ao usuário.
 \end{enumerate}
 
-%% Sugestão de imagem: Um diagrama de fluxo detalhando as etapas do pipeline de processamento de dados. Prompt: 'A flowchart illustrating the data processing pipeline of a SQL translation system, from user input to final output.'
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{figuras/FluxodeDadosnoSistemadeTraducao.eps}
+    \caption{Fluxo de Dados no Sistema de Tradução}
+    \label{fig:FluxodeDadosnoSistemadeTraducaoo}
+\end{figure}
 
 Cada etapa do processo é registrada em logs detalhados, permitindo auditorias e análises de desempenho para identificar gargalos e otimizar o sistema.
 

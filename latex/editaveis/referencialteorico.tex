@@ -9,7 +9,7 @@ As tabelas em um banco de dados relacional são compostas por linhas e colunas, 
 
 Na Figura \ref{fig:exemplo}, pode-se observar um exemplo de tabela que representa um banco de dados com informações de funcionários. A tabela apresenta dados organizados em colunas que indicam o identificador único (\textit{id}) de cada funcionário, o nome, o departamento ao qual pertencem e seus respectivos salários. Esse exemplo ilustra uma estrutura típica utilizada bancos de dados relacionais.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{figuras/tabela_silbershatz.eps}
     \caption{Tabela em um banco de dados relacional}
@@ -36,7 +36,7 @@ A Linguagem de Definição de Dados (DDL) abrange comandos que possibilitam a cr
 
 O comando \textit{CREATE}, na linguagem SQL (\textit{Structured Query Language}), que faz parte da Linguagem de Definição de Dados (DDL), tem como função principal a criação de novos objetos no banco de dados. Entre os comandos disponíveis, o \textit{CREATE TABLE} é frequentemente empregado, sendo responsável pela definição de tabelas que armazenarão os dados. A configuração de uma tabela requer a especificação de colunas, tipos de dados e restrições, como chaves primárias e estrangeiras\cite{silberschatz2011database}.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \begin{lstlisting}
     CREATE TABLE nome_da_tabela (
@@ -54,9 +54,9 @@ O comando \textit{CREATE}, na linguagem SQL (\textit{Structured Query Language})
 
 Na figura \ref{fig:create_table}, O comando SQL apresentado cria a tabela PROJECT, que armazena informações sobre projetos, incluindo nome, número, localização e departamento associado. A coluna Pname armazena o nome do projeto, limitado a 15 caracteres, obrigatório e com restrição de unicidade. O Pnumber, que é a chave primária da tabela, garante que cada projeto tenha um número exclusivo. A coluna Plocation, que também aceita até 15 caracteres, é opcional e pode ser nula. Por último, a coluna Dnum armazena o número do departamento responsável, sendo obrigatória e definida como chave estrangeira, relacionando-se com a coluna Dnumber da tabela DEPARTMENT. Essa estrutura exemplifica a criação de uma tabela relacional com regras de integridade e relacionamento entre tabelas no banco de dados.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
-    \includegraphics{figuras/create_table_elmasi.eps}
+    \includegraphics[width=0.8\textwidth]{figuras/create_table_elmasi.eps}
     \caption{Comando SQL - Criação de uma tabela}
     Fonte: \cite{elmasri2011fundamentals}
     \label{fig:create_table}
@@ -68,7 +68,7 @@ Na figura \ref{fig:create_table}, O comando SQL apresentado cria a tabela PROJEC
 O comando \textit{ALTER TABLE} é um recurso utilizado na manipulação de esquemas de bancos de dados, permitindo a modificação de relações existentes. Por meio deste comando, é possível adicionar novos atributos a uma tabela, os quais inicialmente são atribuídos como nulos para todas as tuplas, ou eliminar atributos já existentes, sendo que a possibilidade de exclusão pode variar entre diferentes sistemas de gerenciamento de banco de dados. A utilização do comando \textit{ALTER TABLE} é relevante para a manutenção da integridade e evolução dos dados em um banco de dados ao longo do tempo \cite{silberschatz2011database}.
 
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \begin{lstlisting}
     ALTER TABLE nome_da_tabela
@@ -82,9 +82,9 @@ O comando \textit{ALTER TABLE} é um recurso utilizado na manipulação de esque
 
 O comando ALTER é empregado para realizar  operações como:  adição, modificação ou exclusão de colunas em uma tabela, ajustes em restrições (como chaves primárias e estrangeiras), e modificações de tipos de dados \cite{silberschatz2011database}. Por exemplo, na figura \ref{fig:alter_table}, a adição de uma nova coluna \textit{Job} a tabela \textit{EMPLOYEE} pode ser realizada através do comando \textit{ALTER TABLE}. Esta flexibilidade é crucial para a manutenção e evolução de sistemas de banco de dados, permitindo adaptações às necessidades dinâmicas das aplicações que os utilizam.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{figuras/alter_table_elmasi.eps}
+    \includegraphics[width=0.7\textwidth]{figuras/alter_table_elmasi.eps}
     \caption{Exemplo SQL - \textit{ALTER TABLE}}
     Fonte: \cite{elmasri2011fundamentals}
     \label{fig:alter_table}
@@ -94,7 +94,7 @@ O comando ALTER é empregado para realizar  operações como:  adição, modific
 
 O comando \textit{DROP} em SQL desempenha um papel crucial na gestão de bancos de dados, permitindo a remoção de relações, tipos, esquemas e índices de forma permanente. Especificamente, o comando \textit{DROP TABLE} é utilizado para excluir uma tabela e todas as suas informações associadas, representando uma ação drástica que não pode ser revertida \cite{silberschatz2011database}.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \begin{lstlisting}
     DROP TABLE nome_da_tabela;
@@ -108,9 +108,9 @@ O comando \textit{DROP} em SQL desempenha um papel crucial na gestão de bancos 
 
 O comando \textit{TRUNCATE TABLE} na linguagem SQL é um procedimento que permite a remoção completa dos dados contidos em uma tabela, sendo classificado como uma instrução de Linguagem de Definição de Dados (DDL). A operação de truncamento é realizada de maneira eficiente, uma vez que envolve a exclusão e recriação da tabela, o que resulta em um desempenho superior, especialmente em tabelas grandes. No entanto, o uso do \textit{TRUNCATE} é restrito em situações onde existem restrições de chave estrangeira que referenciam a tabela alvo.\cite{mySQL2025}
 
-\begin{figure}
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{figuras/truncate_mysql.eps}
+    \includegraphics[width=0.4\textwidth]{figuras/truncate_mysql.eps}
     \caption{Trucante MYSQL}
     Fonte: Autor
     \label{fig:truncate}
@@ -121,7 +121,7 @@ O comando \textit{TRUNCATE TABLE} na linguagem SQL é um procedimento que permit
 
 O comando \textit{RENAME TABLE} é uma instrução no gerenciamento de bancos de dados que, permite a renomeação de uma ou mais tabelas de forma eficiente e em uma única operação. Diferentemente do comando \textit{ALTER TABLE}, que renomeia apenas uma tabela, o \textit{RENAME TABLE} possibilita a renomeação simultânea de várias tabelas, considerando a ordem em que são especificadas na instrução. 
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \begin{lstlisting}
     RENAME TABLE nome_da_tabela_antiga TO nome_da_tabela_nova;
@@ -143,7 +143,7 @@ O \textit{INSERT} permite, também, que os atributos sejam explicitamente nomead
 
 O funcionamento do comando \textit{INSERT} pode ser descrito como a operação que insere uma ou mais tuplas (linhas) em uma tabela na figura \ref{lst:sql_insert}. A sintaxe básica do comando é:
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \begin{lstlisting}
     INSERT INTO nome_da_tabela (coluna1, coluna2, ..., colunaN) 
@@ -162,7 +162,7 @@ Nesta estrutura, "nome\_da\_tabela" representa a tabela onde os dados serão ins
 
 O comando \textit{UPDATE}, presente na linguagem SQL, é uma ferramenta essencial para a modificação seletiva de dados em uma base de dados relacional. Este comando permite alterar valores específicos em tuplas, sem a necessidade de modificações em toda a estrutura do registro. Ao executar uma instrução de atualização, o SQL avalia inicialmente quais tuplas satisfazem as condições especificadas, aplicando as modificações em seguida \cite{silberschatz2011database}.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \begin{lstlisting}
     UPDATE nome_da_tabela
@@ -179,7 +179,7 @@ O comando \textit{UPDATE}, presente na linguagem SQL, é uma ferramenta essencia
 
 No contexto do modelo relacional de dados, o comando \textit{DELETE} do SQL desempenha um papel crucial na manipulação de dados ao permitir a remoção de tuplas de uma tabela específica. Este comando é parte integrante da linguagem de manipulação de dados (DML) e opera exclusivamente em uma única relação por vez. A sintaxe do \textit{DELETE} é similar a uma consulta, onde é possível especificar uma condição na cláusula \textit{WHERE} para determinar quais tuplas devem ser eliminadas. Na ausência dessa cláusula, todas as tuplas da tabela são removidas, embora a estrutura da tabela permaneça intacta para futuras inserções. Além disso, a flexibilidade do \textit{DELETE} permite a incorporação de subconsultas complexas na cláusula \textit{WHERE}, possibilitando a referência a múltiplas relações e a execução de operações condicionais sofisticadas para a seleção criteriosa das tuplas a serem excluídas. A execução cuidadosa do comando \textit{DELETE} é essencial para evitar inconsistências, especialmente quando operações dependem de cálculos como médias, que podem ser afetadas pela ordem das deleções\cite{silberschatz2011database}.
 
-\begin{figure}[h!]
+\begin{figure}[H]
     \centering
     \begin{lstlisting}
     UPDATE nome_da_tabela
